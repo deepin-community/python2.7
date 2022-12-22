@@ -1,0 +1,24 @@
+diff -Nrup python2.7-2.7.18.orig/config.guess python2.7-2.7.18/config.guess
+--- a/config.guess	2020-04-20 05:13:39.000000000 +0800
++++ b/config.guess	2022-04-21 03:29:15.334920298 +0800
+@@ -1051,6 +1051,9 @@ EOF
+     sparc:Linux:*:* | sparc64:Linux:*:*)
+ 	echo ${UNAME_MACHINE}-unknown-linux-${LIBC}
+ 	exit ;;
++    sw_64:Linux:*:*)
++	echo ${UNAME_MACHINE}-unknown-linux-${LIBC}
++	exit ;;
+     tile*:Linux:*:*)
+ 	echo ${UNAME_MACHINE}-unknown-linux-${LIBC}
+ 	exit ;;
+diff -Nrup python2.7-2.7.18.orig/config.sub python2.7-2.7.18/config.sub
+--- a/config.sub	2020-04-20 05:13:39.000000000 +0800
++++ b/config.sub	2022-04-21 03:29:35.385029152 +0800
+@@ -311,6 +311,7 @@ case $basic_machine in
+ 	| sparc | sparc64 | sparc64b | sparc64v | sparc86x | sparclet | sparclite \
+ 	| sparcv8 | sparcv9 | sparcv9b | sparcv9v \
+ 	| spu \
++	| sw_64 \
+ 	| tahoe | tic4x | tic54x | tic55x | tic6x | tic80 | tron \
+ 	| ubicom32 \
+ 	| v850 | v850e | v850e1 | v850e2 | v850es | v850e2v3 \
